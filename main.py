@@ -51,7 +51,11 @@ def run_analysis():
             correlation_list.append( (arr[i][0], arr[j][0], correlation(arr[i][1], arr[j][1]) ))
     a = [item[2] for item in correlation_list]
     a = sorted(a)
-    high_correlation = a[len(correlation_list) - 1]
+    if abs(a[len(correlation_list) - 1]) >= abs(a[0]):
+        high_correlation = a[len(correlation_list) - 1]
+    else:
+        high_correlation = a[0]
+
     for item in correlation_list:
         if item[2] == high_correlation:
             strongest_pair = sorted((item[0], item[1]))
