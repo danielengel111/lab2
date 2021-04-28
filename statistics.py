@@ -48,12 +48,10 @@ def covariance(first_list_of_values, second_list_of_values):
     """
     result = 0
     # Place your code here
-    ####################### start
     first_mean = mean(first_list_of_values)
     second_mean = mean(second_list_of_values)
     result = sum([(x - first_mean) * (y - second_mean) for x, y in zip(first_list_of_values, second_list_of_values)])
     result /= (len(first_list_of_values) - 1)
-    ####################### end
     return result
 
 
@@ -66,11 +64,9 @@ def correlation(first_list_of_values, second_list_of_values):
     """
     result = 0
     # Place your code here
-    ####################### start
     first_standard_deviation = math.sqrt(variance(first_list_of_values))
     second_standard_deviation = math.sqrt(variance(second_list_of_values))
     result = covariance(first_list_of_values, second_list_of_values)
     result /= first_standard_deviation * second_standard_deviation
-    ####################### end
     return result
 
